@@ -1,0 +1,104 @@
+$bg: #2f2f2f
+$bg-hover: $bg
+$bg-even: #232323
+$bg-odd: #101010
+$form-text-color: #8e8e8e
+
+$emergency-color: #f00
+$alert-color: #3d1212
+$critical-color: #7f1818
+$error-color: #fc8e8e
+$warning-color: #f6b5b5
+$notice-color: #98ff63
+$info-color: #1acbff
+$debug-color: #d5d5d5
+
+.LogViewer
+  display: flex
+  flex-direction: column
+  height: 100%
+  background: $bg
+  color: #43a343
+  font-family: monospace
+  font-size: 0.8em
+
+  .Panel
+    display: flex
+    align-items: center
+    background: #888888
+    padding: 2px 10px
+
+    label.Label
+      color: $bg
+      margin: 0 5px
+      white-space: nowrap
+
+    .Field
+      background: $bg
+      padding: 2px 4px
+      color: $form-text-color
+      border: 1px solid $form-text-color
+
+    .Select
+      @extend .Field
+
+    .DatePicker
+      @extend .Field
+
+    .BlockField
+      @extend .Field
+      width: 100%
+
+
+  .Viewer
+    border: 1px solid #5f5f5f
+    overflow: auto
+    padding: 0
+    margin: 0
+    flex: 1
+
+    .Line
+      margin: 0
+      padding: 2px 5px
+      background: $bg-odd
+      cursor: pointer
+      font-family: "Terminus (TTF)", monospace
+      font-size: 12px
+      white-space: pre
+    .Line:nth-child(even)
+      background: $bg-even
+    .Line:hover
+      background: $bg-hover
+
+    .Line.Emergency
+      color: $emergency-color
+    .Line.Alert
+      color: $alert-color
+    .Line.Critical
+      color: $critical-color
+    .Line.Error
+      color: $error-color
+    .Line.Warning
+      color: $warning-color
+    .Line.Notice
+      color: $notice-color
+    .Line.Info
+      color: $info-color
+    .Line.Debug
+      color: $debug-color
+
+  .ViewerLoader
+    height: 100%
+
+  .StatusBar
+    border: 0
+    height: 2em
+    line-height: 1em
+    padding: 5px
+    margin: 0
+    border-left: 5px solid $form-text-color
+
+    p
+      font-size: 0.8em
+      color: $form-text-color
+      margin: 0 5px

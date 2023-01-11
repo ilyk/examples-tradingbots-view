@@ -1,0 +1,42 @@
+$grey-color: #EEE
+$brand-warning: #F0AD4E
+$brand-danger: #D9534F
+$brand-success: #449D44
+
+body
+  padding: 40px
+
+.dots
+  margin: 40px auto
+
+.dot
+  display: inline-block
+  border-radius: 50%
+  width: 50%
+  background-color: $grey-color
+  height: 15px
+  width: 15px
+  margin: 0 2px
+
+  &.Working, &.Idle
+    background-color: $brand-success
+
+  &.Stopping, &.Starting
+    background-color: $brand-warning
+
+  &.Stopped
+    background-color: $brand-danger
+
+  &.dot-sm
+    height: 10px
+    width: 10px
+
+  &.dot-xs
+    height: 4px
+    width: 4px
+    margin: 3px 3px
+
+  &.dot-lg
+    margin: 0 4px
+    height: 20px
+    width: 20px
